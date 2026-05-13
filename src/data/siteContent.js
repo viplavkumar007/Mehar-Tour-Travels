@@ -1,7 +1,9 @@
+import logoImg from '../assets/logo.png'
+
 export const brand = {
   name: 'Mehar Tour and Travels',
   tagline: 'Explore The World With Us',
-  logo: '/src/assets/logo.png',
+  logo: logoImg,
   phone: '9878401712',
   phoneDisplay: '+91 98784 01712',
   whatsapp: '919878401712',

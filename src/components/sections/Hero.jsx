@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { PhoneCall, MessageCircle, Instagram, ChevronDown } from 'lucide-react'
 import { brand, hero } from '../../data/siteContent'
+import businessCard from '../../assets/business-card.png'
 
 const fadeUp = (delay = 0) => ({
   initial:   { opacity: 0, y: 40 },
@@ -128,7 +129,7 @@ export default function Hero() {
               <div className="relative bg-white rounded-3xl p-4 shadow-2xl border border-white/40"
                    style={{ boxShadow: '0 25px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2)' }}>
                 <img
-                  src="/src/assets/business-card.png"
+                  src={businessCard}
                   alt="Mehar Tour and Travels – Business Information"
                   className="w-80 xl:w-96 rounded-2xl block"
                 />
