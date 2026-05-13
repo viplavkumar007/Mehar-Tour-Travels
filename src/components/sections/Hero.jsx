@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { PhoneCall, MessageCircle, Instagram, ChevronDown } from 'lucide-react'
-import { brand, hero } from '../data/siteContent'
+import { brand, hero } from '../../data/siteContent'
 
 const fadeUp = (delay = 0) => ({
   initial:   { opacity: 0, y: 40 },
@@ -110,25 +110,29 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right – Logo floating */}
+          {/* Right – Business Card Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="hidden lg:flex items-center justify-center"
           >
             <motion.div
-              animate={{ y: [0, -16, 0] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
               className="relative"
             >
-              {/* glow ring */}
-              <div className="absolute inset-0 rounded-full blur-3xl opacity-30 bg-brand-orange scale-110" />
-              <img
-                src={brand.logo}
-                alt={brand.name}
-                className="relative w-80 xl:w-96 drop-shadow-2xl"
-              />
+              {/* outer glow */}
+              <div className="absolute -inset-6 rounded-3xl blur-3xl opacity-30 bg-white" />
+              {/* white card frame */}
+              <div className="relative bg-white rounded-3xl p-4 shadow-2xl border border-white/40"
+                   style={{ boxShadow: '0 25px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2)' }}>
+                <img
+                  src="/src/assets/business-card.png"
+                  alt="Mehar Tour and Travels – Business Information"
+                  className="w-80 xl:w-96 rounded-2xl block"
+                />
+              </div>
             </motion.div>
           </motion.div>
         </div>
