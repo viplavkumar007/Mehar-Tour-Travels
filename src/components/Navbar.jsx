@@ -68,7 +68,7 @@ export default function Navbar() {
   /* ── transparent when at top, glass when scrolled ── */
   const navBg = scrolled
     ? 'glass shadow-md shadow-brand-navy/10'
-    : 'bg-transparent'
+    : 'glass-dark shadow-lg shadow-black/20 border-b border-white/10'
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Navbar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-24 flex items-center justify-between">
+        <div className="mx-auto flex h-24 w-full max-w-[96rem] items-center justify-between px-6 lg:px-8">
           {/* Logo + Brand Name */}
           <a href="#home" onClick={e => { e.preventDefault(); scrollTo('#home') }}
              className="flex items-center gap-3 flex-shrink-0">
@@ -100,15 +100,20 @@ export default function Navbar() {
           </a>
 
           {/* Links */}
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-2 rounded-full border border-white/10 bg-black/10 px-3 py-2 backdrop-blur-sm">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <button
                   onClick={() => scrollTo(href)}
-                  className={`nav-link px-3 py-1.5 rounded-lg
-                    ${scrolled ? 'text-brand-navy hover:text-brand-orange'
-                               : 'text-white hover:text-orange-300'}
-                    ${activeSection === href.replace('#','') ? 'text-brand-orange' : ''}`}
+                  className={`nav-link px-3 py-2 rounded-full
+                    ${scrolled
+                      ? 'text-brand-navy hover:text-brand-orange hover:bg-brand-blueLight/70'
+                      : 'text-white hover:text-white hover:bg-white/12'}
+                    ${activeSection === href.replace('#','')
+                      ? scrolled
+                        ? 'bg-white text-brand-orange shadow-sm'
+                        : 'bg-white/16 text-white shadow-sm'
+                      : ''}`}
                 >
                   {label}
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-orange rounded-full transition-all duration-300
@@ -119,18 +124,18 @@ export default function Navbar() {
           </ul>
 
           {/* CTAs */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-shrink-0 items-center gap-2">
             <a
               href={`https://wa.me/${brand.whatsapp}?text=${encodeURIComponent("Hello Mehar Tour and Travels! I'm interested in booking a trip.")}`}
               target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2.5 rounded-xl
-                         bg-green-500 hover:bg-green-600 text-white transition-colors duration-200 shadow-sm"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold px-4 py-2.5 rounded-xl
+                         bg-green-500 hover:bg-green-600 text-white transition-colors duration-200 shadow-lg shadow-green-900/20"
             >
               <WhatsAppIcon />
               WhatsApp
             </a>
             <a href={`tel:${brand.phone}`}
-               className="btn-primary text-sm py-2.5 px-4">
+               className="btn-primary whitespace-nowrap text-sm py-2.5 px-4">
               <Phone size={15} />
               Call Now
             </a>
