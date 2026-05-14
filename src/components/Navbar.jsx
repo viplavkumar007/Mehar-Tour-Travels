@@ -23,6 +23,7 @@ export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [menuOpen, setMenuOpen]     = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const mobileNavHeight = 56
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -46,9 +47,22 @@ export default function Navbar() {
   }, [])
 
   const scrollTo = (href) => {
-    setMenuOpen(false)
     const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (!el) return
+
+    const scroll = () => {
+      const offset = window.innerWidth < 768 ? mobileNavHeight : 96
+      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    }
+
+    if (window.innerWidth < 768 && menuOpen) {
+      setMenuOpen(false)
+      window.setTimeout(scroll, 260)
+      return
+    }
+
+    scroll()
   }
 
   /* ── transparent when at top, glass when scrolled ── */
