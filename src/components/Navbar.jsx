@@ -16,6 +16,7 @@ const navLinks = [
   { href: '#destinations', label: 'Destinations' },
   { href: '#testimonials', label: 'Reviews' },
   { href: '#faq',          label: 'FAQ' },
+  { href: '#payments',     label: 'Payments' },
   { href: '#contact',      label: 'Contact' },
 ]
 

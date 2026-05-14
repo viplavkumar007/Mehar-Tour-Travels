@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Mail, MapPin, Send, CheckCircle, AlertCircle, X } from 'lucide-react'
 import { brand, contact } from '../../data/siteContent'
 import ScrollReveal from '../ScrollReveal'
-import paymentQr from '../../assets/payment-qr.jpeg'
 
 function Toast({ type, msg, onClose }) {
   return (
@@ -292,31 +291,6 @@ export default function ContactForm() {
                 <p className="text-xs text-brand-navyLight/40 text-center">
                   Your enquiry will be pre-filled and sent directly. We respond within 1 hour.
                 </p>
-
-                <div className="mt-3 rounded-2xl border border-brand-blue/10 bg-gradient-to-br from-brand-blueLight/40 via-white to-brand-orangeLight/40 p-4 sm:p-5">
-                  <div className="flex flex-col gap-5 md:flex-row md:items-center">
-                    <div className="flex-1">
-                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-orange">
-                        Accepts Payments
-                      </p>
-                      <h4 className="mt-2 font-display text-xl font-bold text-brand-navy">
-                        Scan QR To Pay Securely
-                      </h4>
-                      <p className="mt-2 text-sm leading-relaxed text-brand-navyLight/70">
-                        We accept UPI payments for bookings and trip advances. Scan the QR code
-                        to pay Mehar Tour and Travels directly.
-                      </p>
-                    </div>
-
-                    <div className="mx-auto w-full max-w-[220px] rounded-2xl bg-white p-3 shadow-lg shadow-brand-blue/10 ring-1 ring-slate-100">
-                      <img
-                        src={paymentQr}
-                        alt="Mehar Tour and Travels UPI payment QR code"
-                        className="w-full rounded-xl object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </ScrollReveal>
