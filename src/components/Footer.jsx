@@ -49,6 +49,20 @@ export default function Footer() {
                 </svg>
                 @{brand.instagram}
               </a>
+              <a
+                href={brand.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex items-center gap-2 px-4 py-2 rounded-full
+                           bg-[#1877F2] text-white text-sm font-semibold
+                           hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.025 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.017 1.792-4.684 4.533-4.684 1.313 0 2.686.236 2.686.236v2.963H15.83c-1.49 0-1.955.931-1.955 1.886v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.093 24 18.098 24 12.073Z" />
+                </svg>
+                Facebook
+              </a>
             </div>
           </div>
 

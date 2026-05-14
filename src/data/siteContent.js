@@ -10,6 +10,7 @@ export const brand = {
   email: 'mehartourandtravels1313@gmail.com',
   instagram: 'gaganpreet4641',
   instagramUrl: 'https://www.instagram.com/gaganpreet4641',
+  facebookUrl: 'https://www.facebook.com/share/18bmrBzr4i/?mibextid=wwXIfr',
   address: 'Shop No. 4, 118 Cheema Nagar, Mithapur Road, Jalandhar',
   city: 'Jalandhar, Punjab',
   mapUrl: 'https://maps.google.com/?q=Cheema+Nagar+Mithapur+Road+Jalandhar',
@@ -23,7 +24,7 @@ export const hero = {
   headline: 'Your Dream Journey',
   headlineAccent: 'Starts Here',
   subheadline:
-    'From spiritual Char Dham yatras to exotic international getaways — Mehar Tour and Travels crafts unforgettable experiences for every traveller in Jalandhar.',
+    'From spiritual Char Dham yatras to exotic international getaways — Mehar Tour and Travels crafts unforgettable experiences for every traveller in India & Abroad.',
   cta1: 'Get Free Quote',
   cta2: 'WhatsApp Us',
   stats: [

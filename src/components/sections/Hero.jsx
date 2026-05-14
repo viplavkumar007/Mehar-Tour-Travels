@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { PhoneCall, MessageCircle, Instagram, ChevronDown } from 'lucide-react'
+import { PhoneCall, ChevronDown } from 'lucide-react'
 import { brand, hero } from '../../data/siteContent'
 import businessCard from '../../assets/business-card.png'
 
@@ -53,23 +53,39 @@ export default function Hero() {
 
           {/* Left – Text */}
           <div>
-            {/* Instagram badge */}
-            <motion.a
+            {/* Social badges */}
+            <motion.div
               {...fadeUp(0.1)}
-              href={brand.instagramUrl}
-              target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
-                         bg-white/15 border border-white/30 text-white text-sm font-medium
-                         hover:bg-white/25 transition-all duration-200 mb-6 backdrop-blur-sm"
+              className="mb-6 flex flex-wrap items-center gap-3"
             >
-              {/* Instagram SVG icon */}
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-              </svg>
-              @{brand.instagram}
-            </motion.a>
+              <a
+                href={brand.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30
+                           bg-white/15 px-4 py-1.5 text-sm font-medium text-white
+                           backdrop-blur-sm transition-all duration-200 hover:bg-white/25"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                </svg>
+                @{brand.instagram}
+              </a>
+
+              <a
+                href={brand.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#1877F2] px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1669d9]"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.025 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.41c0-3.017 1.792-4.684 4.533-4.684 1.313 0 2.686.236 2.686.236v2.963H15.83c-1.49 0-1.955.931-1.955 1.886v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.093 24 18.098 24 12.073Z" />
+                </svg>
+                Facebook
+              </a>
+            </motion.div>
 
             <motion.h1 {...fadeUp(0.2)}
               className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-shadow">
